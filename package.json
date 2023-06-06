@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "typescript": "^5.0.4"
+  },
+  "name": "live-chat",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "dev": "nodemon src/app.ts",
+    "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaptainHmD/Live-Chat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaptainHmD/Live-Chat/issues"
+  },
+  "homepage": "https://github.com/CaptainHmD/Live-Chat#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.2.1",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1"
+  }
+}
