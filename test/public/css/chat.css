@@ -6,13 +6,31 @@ body {
 .mm {
   /* display: flex;
   justify-content: center; */
-  width: 75%;
-  margin-left: 12.5%;
+  width: 90%;
+  margin-left: 5%;
 }
 
 @media (min-width: 640px) {
   .ppp {
     padding: 4rem !important;
+  }
+  .mm {
+    /* display: flex;
+    justify-content: center; */
+    width: 75%;
+    margin-left: 12.5%;
+  }
+}
+
+@media (max-width: 350px) {
+  .dnone{
+    display: none;
+  }
+  .mm {
+    /* display: flex;
+    justify-content: center; */
+    width: 100%;
+    margin-left: 0;
   }
 }
 
