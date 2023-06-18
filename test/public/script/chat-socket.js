@@ -19,7 +19,18 @@ function sendMessage(message) {
   socket.on("receiveMessage", (message,senderName) => {
     displayReceivedMessages(message,senderName);
   });
-
+  socket.on("connectionAlert", (username)=>{
+    connectionAlert(username)
+  })
+  socket.on("disconnectionAlert", (username)=>{
+    disconnectionAlert(username)
+  })
+  socket.on('newOnlineUsers',(usersName)=>{
+    addOnlineUsers(usersName)
+  })
+  socket.on('newOnlineUser',(usersName)=>{
+    addOnlineUser(usersName)
+  })
   let modal = document.getElementById("modal");
   const username = document.getElementById('username-value');
   function modalHandler() {
