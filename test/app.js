@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   res.sendFile("chat-room.html", { root: "./public/view" });
 });
 
-server.listen(3500, () => {
+server.listen(3200, () => {
   console.log("Server is listing");
 });
 
