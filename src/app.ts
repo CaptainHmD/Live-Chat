@@ -12,3 +12,7 @@ app.get("/",(req:Request, res:Response) => {
 app.listen(3500,()=> {
     console.log("Server is running");
 })
+
+
+
+

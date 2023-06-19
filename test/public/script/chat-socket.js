@@ -31,6 +31,9 @@ function sendMessage(message) {
   socket.on('newOnlineUser',(usersName)=>{
     addOnlineUser(usersName)
   })
+  socket.on('onlineUserDisconnected',userSocket=>{
+    deleteOnlineUser(userSocket);
+  })
   let modal = document.getElementById("modal");
   const username = document.getElementById('username-value');
   function modalHandler() {

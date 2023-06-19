@@ -23,16 +23,18 @@ el.scrollTop = el.scrollHeight;
     const onlineUsersList = document.getElementById("users-list");
     function addOnlineUsers(usersName){
       usersName.forEach(username => {
-        console.log(username); 
-        console.log(onlineUsersList[0].target);
-        onlineUsersList.innerHTML+='<li><span class="font-semibold text-gray-900 dark:text-white" data-socket="'+username.socket+'">'+username.userName+'</span> </li>'        
+        onlineUsersList.innerHTML+='<li id="'+username.socket+'"><span class="font-semibold text-gray-900 dark:text-white">'+username.userName+'</span> </li>'        
       });
     }
     function addOnlineUser(usersName){
-      console.log(usersName);
-        onlineUsersList.innerHTML+='<li><span class="font-semibold text-gray-900 dark:text-white" data-socket="'+usersName.socket+'">'+usersName.userName+'</span> </li>'        
+        onlineUsersList.innerHTML+='<li id="'+usersName.socket+'"><span class="font-semibold text-gray-900 dark:text-white">'+usersName.userName+'</span> </li>'        
     }
-
+    function deleteOnlineUser(userSocket) {
+      const userInList= document.getElementById(userSocket);
+      onlineUsersList.removeChild(userInList);
+    }
+    
+    
     
     
     function fadeOut(el) {
