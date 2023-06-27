@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const app = express();
 const http = require("http");
@@ -5,13 +6,31 @@ const { Server } = require("socket.io");
 const server = http.createServer(app);
 const io = new Server(server);
 
+//! database 
+const mongoose = require("mongoose");
+
+//connection to db
+const connectDB = require("./config/database");
+
+connectDB();
+
+
 //! serving static files
 app.use(express.static("public"));
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.sendFile("chat-room.html", { root: "./public/view" });
 });
+app.get("/test",(req,res)=>{
+  res.send("hello world")
+})
 
+
+
+
+//!routes 
+app.use(('/auth'),require("./routes/auth"))
 server.listen(3200, () => {
   console.log("Server is listing");
 });
